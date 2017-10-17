@@ -36,6 +36,7 @@ post '/create' do
 	P.title = title
 	P.body = body
 	P.save
+	return "Post success!"
 end
 
 
