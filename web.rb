@@ -30,9 +30,14 @@ get '/new' do
 end
 
 post '/create' do
-	#replace this
-	return params.to_s
+	title = params["title"]
+	body = params["body"]
+	P = Post.new
+	P.title = title
+	P.body = body
+	P.save
 end
+
 
 get '/' do
 	#load all posts
@@ -41,7 +46,7 @@ get '/' do
 	@headline = "My life in blog"
 	@paragraph = "Follow me plz. Follow 4 Follow."
 	@posts = Post.all
-
-
 	erb :index
 end
+
+
